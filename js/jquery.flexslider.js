@@ -1,4 +1,6 @@
-
+/*
+ * jQuery FlexSlider v2.2.0
+ */
 ;
 (function ($) {
 
