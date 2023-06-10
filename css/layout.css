@@ -1,5 +1,6 @@
 /*
-
+=====================================================================
+=====================================================================
 
    TOC:
    a. General Styles
@@ -322,31 +323,31 @@ ul#nav li.current a { color: #F06000; }
 }
 
 .photoshop {
-  	width: 90%;
+  	width: 60%;
   	-moz-animation: photoshop 2s ease;
   	-webkit-animation: photoshop 2s ease;
 }
 .illustrator {
-  	width: 75%;
+  	width: 55%;
   	-moz-animation: illustrator 2s ease;
   	-webkit-animation: illustrator 2s ease;
 }
-.AE {
+.wordpress {
   	width: 50%;
   	-moz-animation: wordpress 2s ease;
   	-webkit-animation: wordpress 2s ease;
 }
-.Fig {
-  	width: 50%;
+.css {
+  	width: 90%;
   	-moz-animation: css 2s ease;
   	-webkit-animation: css 2s ease;
 }
 .html5 {
-  	width: 60%;
+  	width: 80%;
   	-moz-animation: html5 2s ease;
   	-webkit-animation: html5 2s ease;
 }
-.wordpress {
+.jquery {
   	width: 50%;
   	-moz-animation: jquery 2s ease;
   	-webkit-animation: jquery 2s ease;
