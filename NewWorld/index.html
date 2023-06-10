@@ -157,7 +157,47 @@
 		initGeometry();
 		initFBOs(gl,fboz,fboCount);
 		resizeCanvas();
-		
+
+		var touchX = null;
+		var touchY = null;
+
+		c.addEventListener("touchstart", handleTouchStart, false);
+		c.addEventListener("touchmove", handleTouchMove, false);
+
+		function handleTouchStart(event) {
+		    var touch = event.touches[0];
+		    touchX = touch.clientX;
+		    touchY = touch.clientY;
+		}
+
+		function handleTouchMove(event) {
+		    if (!touchX || !touchY) {
+		        return;
+		    }
+    
+		    var touch = event.touches[0];
+		    var deltaX = touchX - touch.clientX;
+		    var deltaY = touchY - touch.clientY;
+    
+		    // Use deltaX and deltaY to adjust the camera position or rotation
+ 		    // based on the touch movement
+    
+		    // Example: Rotate the camera based on horizontal movement
+		    var rotationSpeed = 0.01;
+		    var rotationAngle = deltaX * rotationSpeed;
+		    cam.rotateY(rotationAngle);
+    
+		    // Example: Move the camera forward or backward based on vertical movement
+		    var movementSpeed = 0.1;
+		    var movementDistance = deltaY * movementSpeed;
+		    cam.moveForward(movementDistance);
+    
+		    // Update touchX and touchY for the next touchmove event
+		    touchX = touch.clientX;
+		    touchY = touch.clientY;
+		}
+
+
     	function initGL(){
     		try { gl = c.getContext("webgl"); }
     		catch (x) { gl = null; }
@@ -204,47 +244,12 @@
     		document.onkeydown = function(event){ cam.kdown(event);};
     		document.onkeyup = function(event){ cam.kup(event);};
 
-			// Add event listeners for touch events
-			document.addEventListener('touchstart', handleTouchStart, false);
-    		document.addEventListener('touchmove', handleTouchMove, false);
-    		document.addEventListener('touchend', handleTouchEnd, false);
+			
     	  }
     	  else {
     	  	window.location.replace("simple.html");
     	  }
 		}
-
-		// Function to handle touch start event
-function handleTouchStart(event) {
-  var touch = event.touches[0];
-  startX = touch.clientX;
-  startY = touch.clientY;
-}
-
-// Function to handle touch move event
-function handleTouchMove(event) {
-  if (!startX || !startY) {
-    return;
-  }
-
-  var touch = event.touches[0];
-  var deltaX = startX - touch.clientX;
-  var deltaY = startY - touch.clientY;
-
-  // Adjust the camera movement based on the touch input
-  // For example, you can modify the camera's rotation or position based on deltaX and deltaY values
-
-  startX = touch.clientX;
-  startY = touch.clientY;
-}
-
-// Function to handle touch end event
-function handleTouchEnd(event) {
-  startX = null;
-  startY = null;
-}
-
-
 		
 		function initGeometry(){
 			initAttrs();
