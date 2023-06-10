@@ -21,6 +21,6 @@
 
 .carousel img {
     -webkit-box-reflect: below 20px linear-gradient(rgba(255,255,255,0.1),rgba(255,255,255,0.3));
-    border: 5px solid rgb(190, 55, 220);
+    border: 5px solid rgb(182, 49, 212);
     border-radius: 1.5rem;
 }
