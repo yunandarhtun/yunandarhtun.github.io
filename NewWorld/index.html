@@ -26,6 +26,7 @@
 	<div id="pavilion-info">
 		<h1>Harumi's Dimension</h1><h2>virtual dimension by <a href="http://yunandarhtun.github.io">Yu Nandar Htun</a> </h2><img src="images/Harumi.jpg" id="wrongimg" /></a>
 		<ul id="artistlist">
+		
 		<li><a href="" target="_blank"></a> [400,400] </li>
 		<li><a href="" target="_blank"></a> [-400,800]</li>
 		<li><a href="" target="_blank"></a> [800,1400]</li>
@@ -202,11 +203,48 @@
     		gif = new gifLocs();
     		document.onkeydown = function(event){ cam.kdown(event);};
     		document.onkeyup = function(event){ cam.kup(event);};
+
+			// Add event listeners for touch events
+			document.addEventListener('touchstart', handleTouchStart, false);
+    		document.addEventListener('touchmove', handleTouchMove, false);
+    		document.addEventListener('touchend', handleTouchEnd, false);
     	  }
     	  else {
     	  	window.location.replace("simple.html");
     	  }
 		}
+
+		// Function to handle touch start event
+function handleTouchStart(event) {
+  var touch = event.touches[0];
+  startX = touch.clientX;
+  startY = touch.clientY;
+}
+
+// Function to handle touch move event
+function handleTouchMove(event) {
+  if (!startX || !startY) {
+    return;
+  }
+
+  var touch = event.touches[0];
+  var deltaX = startX - touch.clientX;
+  var deltaY = startY - touch.clientY;
+
+  // Adjust the camera movement based on the touch input
+  // For example, you can modify the camera's rotation or position based on deltaX and deltaY values
+
+  startX = touch.clientX;
+  startY = touch.clientY;
+}
+
+// Function to handle touch end event
+function handleTouchEnd(event) {
+  startX = null;
+  startY = null;
+}
+
+
 		
 		function initGeometry(){
 			initAttrs();
