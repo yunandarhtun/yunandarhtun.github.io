@@ -366,7 +366,7 @@ ul#nav li.current a { color: #F06000; }
   0%   { width: 0px;  }
   100% { width: 50%;  }
 }
-@-moz-keyframes css {
+@-moz-keyframes Fig {
   0%   { width: 0px;  }
   100% { width: 90%;  }
 }
@@ -374,7 +374,7 @@ ul#nav li.current a { color: #F06000; }
   0%   { width: 0px;  }
   100% { width: 80%;  }
 }
-@-moz-keyframes jquery {
+@-moz-keyframes AE {
   0%   { width: 0px;  }
   100% { width: 50%;  }
 }
@@ -391,7 +391,7 @@ ul#nav li.current a { color: #F06000; }
   0%   { width: 0px;  }
   100% { width: 50%;  }
 }
-@-webkit-keyframes css {
+@-webkit-keyframes Fig {
   0%   { width: 0px;  }
   100% { width: 90%;  }
 }
@@ -399,7 +399,7 @@ ul#nav li.current a { color: #F06000; }
   0%   { width: 0px;  }
   100% { width: 80%;  }
 }
-@-webkit-keyframes jquery {
+@-webkit-keyframes AE {
   0%   { width: 0px;  }
   100% { width: 50%;  }
 }
